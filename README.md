@@ -2,62 +2,35 @@
 
 # 🌐 Enterprise Network Design & Implementation
 
-### 🚀 Cisco Packet Tracer Enterprise Campus Network
+### Cisco Packet Tracer Enterprise Campus Network Simulation
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F62FE,100:00C853&height=180&section=header&text=Enterprise%20Network%20Lab&fontSize=40&fontColor=ffffff&animation=fadeIn"/>
+<p>
+A production-inspired enterprise campus network implementing Cisco's hierarchical design model with secure routing, switching, enterprise services, and network security.
+</p>
 
 <p>
 
 ![Cisco](https://img.shields.io/badge/Cisco-Packet%20Tracer-1BA0D7?logo=cisco&logoColor=white)
 ![Routing](https://img.shields.io/badge/Routing-OSPF-success)
 ![Switching](https://img.shields.io/badge/Switching-VLAN-blue)
-![Security](https://img.shields.io/badge/Security-ACL%20%7C%20SSH-red)
+![Security](https://img.shields.io/badge/Security-SSH%20%7C%20ACL-red)
 ![NAT](https://img.shields.io/badge/NAT-PAT-orange)
 ![License](https://img.shields.io/badge/License-MIT-brightgreen)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
 </p>
 
-> **A production-inspired enterprise campus network implementing Cisco best practices for Routing, Switching, Security, Enterprise Services, and Network Management.**
-
 </div>
 
 ---
 
-# 📑 Table of Contents
+# 📖 Project Overview
 
-- Overview
-- Enterprise Topology
-- Network Architecture
-- Features
-- VLAN Design
-- IP Addressing
-- Server Infrastructure
-- Technologies
-- Security
-- Testing
-- Repository Structure
-- Future Improvements
-- Author
+This project simulates a real-world **Enterprise Campus Network** using **Cisco Packet Tracer**.
 
----
+The network follows Cisco's **Three-Tier Hierarchical Architecture**, consisting of Core, Distribution, and Access layers. It demonstrates enterprise networking concepts including VLAN segmentation, Layer 3 switching, dynamic routing, centralized network services, secure remote management, and Internet connectivity.
 
-# 📖 Overview
-
-This project simulates a medium-sized enterprise campus network following Cisco's **Three-Tier Hierarchical Design Model**.
-
-The implementation demonstrates practical enterprise networking concepts including:
-
-- Layer 3 Switching
-- Dynamic Routing
-- Enterprise VLAN Design
-- Secure Network Infrastructure
-- Internal Server Farm
-- Public Internet Services
-- Enterprise Security
-- Network Management
-
-The primary objective is to build a scalable, secure, and manageable enterprise network similar to those used in real organizations.
+The project was developed as part of my networking portfolio to demonstrate practical knowledge of enterprise network design and implementation.
 
 ---
 
@@ -65,39 +38,39 @@ The primary objective is to build a scalable, secure, and manageable enterprise 
 
 <p align="center">
 
-<img src="diagrams/enterprise-topology.png" width="95%"/>
+<img src="diagrams/enterprise-topology.png" width="95%">
 
 </p>
 
 ---
 
-# 🏗 Architecture
+# 🏗 Network Architecture
 
 ```
                     Internet
                         │
-                 Internet Router
+                Internet Router
                         │
-                    ISP Router
+                   ISP Router
                         │
                    Edge Router
                         │
-              Layer-3 Core Switch
-                 /              \
-        Distribution       Distribution
-            Switch             Switch
-           /      \           /      \
-      Access    Access   Access    Access
+               Layer 3 Core Switch
+                 /               \
+       Distribution         Distribution
+          Switch               Switch
+         /      \             /      \
+    Access    Access     Access    Access
 
-        Enterprise Campus Network
+          Enterprise Departments
 ```
 
 ---
 
 # 📊 Project Statistics
 
-| Item | Count |
-|------|-------|
+| Component | Quantity |
+|-----------|---------:|
 | Routers | 3 |
 | Layer 3 Switch | 1 |
 | Distribution Switches | 2 |
@@ -109,24 +82,68 @@ The primary objective is to build a scalable, secure, and manageable enterprise 
 
 ---
 
-# 🌐 Network Features
+# 🏢 Department VLANs
+
+| VLAN | Department | Network |
+|------|------------|----------------|
+|10|Management|192.168.10.0/24|
+|20|Human Resources|192.168.20.0/24|
+|30|Finance|192.168.30.0/24|
+|40|IT Department|192.168.40.0/24|
+|50|Sales|192.168.50.0/24|
+|99|Server Farm|192.168.99.0/24|
+
+---
+
+# 🌍 WAN Addressing
+
+| Connection | Network |
+|------------|----------------|
+|Internet ↔ ISP|198.51.100.0/30|
+|ISP ↔ Edge Router|203.0.113.0/30|
+|Edge Router ↔ Core Switch|10.255.255.0/30|
+
+---
+
+# 🖥 Enterprise Server Infrastructure
+
+## Internal Server Farm
+
+| Server | IP Address | Services |
+|---------|------------|-----------------------------|
+|SERVER-01|192.168.99.10|DNS, NTP, Syslog|
+|SERVER-02|192.168.99.11|HTTP, FTP, File Server|
+|SERVER-03|192.168.99.12|Mail Server, Backup|
+
+---
+
+## Public Internet Servers
+
+| Server | IP Address | Service |
+|---------|------------|----------------|
+|DNS Server|198.51.101.10|Public DNS|
+|Web Server|198.51.101.20|HTTP|
+|FTP Server|198.51.101.30|FTP|
+
+---
+
+# ✨ Implemented Features
 
 ## Routing
 
 - OSPF Dynamic Routing
-- Static Default Route
-- Inter-VLAN Routing
-- Layer 3 Switching
+- Static Default Routing
+- Layer 3 Inter-VLAN Routing
 
 ---
 
 ## Switching
 
 - VLAN Segmentation
-- Trunk Links
-- STP
-- PortFast
-- BPDU Guard
+- 802.1Q Trunk Links
+- Layer 2 Switching
+- Layer 3 Switching
+- Spanning Tree Protocol (PVST)
 
 ---
 
@@ -137,121 +154,93 @@ The primary objective is to build a scalable, secure, and manageable enterprise 
 - Public DNS
 - HTTP
 - FTP
-- Mail
+- Mail Server
 - File Server
 - Syslog
 - NTP
-- Backup
+- Backup Server
 
 ---
 
 ## Security
 
-- ACL
+- Secure Shell (SSH)
+- Access Control Lists (ACL)
 - NAT/PAT
-- SSH
 - Port Security
-- Disabled Unused Ports
-- VLAN Isolation
+- PortFast
+- BPDU Guard
+- Disabled Unused Access Ports
 
 ---
 
-# 🏢 VLAN Design
+# 🔐 Security Features
 
-| VLAN | Department | Network |
-|------|------------|----------------|
-|10|Management|192.168.10.0/24|
-|20|Human Resources|192.168.20.0/24|
-|30|Finance|192.168.30.0/24|
-|40|IT|192.168.40.0/24|
-|50|Sales|192.168.50.0/24|
-|99|Server Farm|192.168.99.0/24|
-
----
-
-# 🌍 WAN Addressing
-
-| Link | Network |
-|------|---------------|
-|Internet ↔ ISP|198.51.100.0/30|
-|ISP ↔ EDGE|203.0.113.0/30|
-|EDGE ↔ CORE|10.255.255.0/30|
-
----
-
-# 🖥 Enterprise Server Farm
-
-| Server | Services |
-|---------|--------------------------|
-|SERVER-01|DNS, NTP, Syslog|
-|SERVER-02|Web, FTP, File|
-|SERVER-03|Mail, Backup|
-
----
-
-# 🌎 Public Internet Services
-
-| Service | IP |
-|----------|----------------|
-|DNS|198.51.101.10|
-|Web|198.51.101.20|
-|FTP|198.51.101.30|
+| Feature | Status |
+|----------|--------|
+|SSH Remote Access|✅|
+|ACL|✅|
+|NAT/PAT|✅|
+|Port Security|✅|
+|PortFast|✅|
+|BPDU Guard|✅|
+|Unused Ports Shutdown|✅|
 
 ---
 
 # 🛠 Technologies Used
 
-| Category | Technologies |
-|-----------|------------------------------|
+| Category | Technology |
+|-----------|--------------------------|
 |Routing|OSPF|
 |Switching|VLAN, STP, Trunking|
-|Security|ACL, SSH, NAT/PAT, Port Security|
 |Services|DHCP, DNS, HTTP, FTP, Mail|
+|Security|SSH, ACL, NAT/PAT, Port Security|
 |Management|Syslog, NTP|
 |Platform|Cisco Packet Tracer|
 
 ---
 
-# 🔐 Security Implementation
+# 🧪 Testing & Validation
 
-✅ Access Control Lists
+The following functionality has been successfully tested.
 
-✅ Secure Shell (SSH)
-
-✅ Port Security
-
-✅ BPDU Guard
-
-✅ PortFast
-
-✅ NAT/PAT
-
-✅ Disabled Unused Ports
+- ✅ End-to-End Connectivity
+- ✅ Inter-VLAN Routing
+- ✅ OSPF Neighbor Formation
+- ✅ DHCP Address Assignment
+- ✅ Internal DNS Resolution
+- ✅ Public DNS Resolution
+- ✅ HTTP Server Access
+- ✅ FTP Server Access
+- ✅ SSH Remote Login
+- ✅ NAT/PAT Internet Access
+- ✅ Port Security
+- ✅ ACL Verification
 
 ---
 
-# 🧪 Testing & Validation
+# 📸 Screenshots
 
-| Test | Status |
-|------|--------|
-|End-to-End Connectivity|✅|
-|Inter-VLAN Routing|✅|
-|OSPF Neighbor Formation|✅|
-|DHCP Address Assignment|✅|
-|DNS Resolution|✅|
-|HTTP Access|✅|
-|FTP Access|✅|
-|SSH Login|✅|
-|NAT Translation|✅|
-|Port Security|✅|
+The repository includes screenshots for:
+
+- Enterprise Network Topology
+- SSH Login
+- DHCP Verification
+- DNS Resolution
+- HTTP Access
+- FTP Access
+- NAT Translation
+- OSPF Neighbors
+- VLAN Verification
 
 ---
 
 # 📂 Repository Structure
 
 ```
-enterprise-network-lab/
-
+enterprise-network-lab
+│
 ├── assets/
 ├── configs/
 ├── diagrams/
@@ -264,48 +253,35 @@ enterprise-network-lab/
 
 ---
 
-# 📸 Project Gallery
-
-| Screenshot | Description |
-|------------|-------------|
-|Topology|Enterprise Network Diagram|
-|SSH|Secure Remote Login|
-|DHCP|Automatic Address Assignment|
-|DNS|Domain Resolution|
-|HTTP|Web Server Access|
-|FTP|FTP Server|
-|NAT|PAT Translation|
-|OSPF|Neighbor Verification|
-
----
-
 # 📚 Skills Demonstrated
 
 - Enterprise Network Design
-- Cisco Switching
 - Cisco Routing
+- Cisco Switching
 - Layer 3 Switching
 - OSPF
 - VLAN Design
-- Enterprise Security
-- Server Infrastructure
-- Network Documentation
-- Troubleshooting
+- DHCP
+- DNS
+- NAT/PAT
+- Network Security
+- Network Troubleshooting
+- Technical Documentation
 
 ---
 
 # 🚀 Future Improvements
 
-- IPv6
+Future enhancements that can be added to this project:
+
+- IPv6 Deployment
 - HSRP
 - EtherChannel
-- SNMP
-- VPN
-- Wireless LAN
-- Firewall
-- Python Automation
-- Ansible
-- Cisco ISE
+- SNMP Monitoring
+- VPN Connectivity
+- Firewall Integration
+- Wireless Infrastructure
+- Network Automation using Python
 
 ---
 
@@ -318,20 +294,26 @@ enterprise-network-lab/
 🎓 M.Sc. in Computer Science & Engineering  
 Jahangirnagar University
 
-🌐 GitHub
+**GitHub**
 
 https://github.com/Fahad-al-sadat
 
-💼 LinkedIn
+**LinkedIn**
 
 https://linkedin.com/in/fahad-al-sadat
 
 ---
 
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
 <div align="center">
 
-## ⭐ If you like this project, please consider giving it a Star.
+### ⭐ If you found this project useful, please consider giving it a Star.
 
-**Thank you for visiting my repository!**
+Thank you for visiting this repository!
 
 </div>
