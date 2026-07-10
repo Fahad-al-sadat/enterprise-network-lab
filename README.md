@@ -1,149 +1,239 @@
-# 🌐 Enterprise Network Lab
+<div align="center">
 
-> A production-inspired enterprise network built using Cisco Packet Tracer, demonstrating modern routing, switching, network security, and infrastructure best practices.
+# 🌐 Enterprise Network Design & Implementation
 
-![Status](https://img.shields.io/badge/Status-In%20Progress-blue)
-![Cisco Packet Tracer](https://img.shields.io/badge/Cisco-Packet%20Tracer-1BA0D7?logo=cisco&logoColor=white)
+### Cisco Packet Tracer Enterprise Campus Network Simulation
+
+<p>
+A production-inspired enterprise campus network implementing Cisco's hierarchical design model with secure routing, switching, enterprise services, and network security.
+</p>
+
+<p>
+
+![Cisco](https://img.shields.io/badge/Cisco-Packet%20Tracer-1BA0D7?logo=cisco&logoColor=white)
+![OSPF](https://img.shields.io/badge/Routing-OSPF-success)
+![NAT/PAT](https://img.shields.io/badge/NAT-PAT-orange)
+![SSH](https://img.shields.io/badge/Secure-SSH-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+
+</p>
+
+</div>
 
 ---
 
-## 📖 Overview
+# 📖 Project Overview
 
-This project simulates a real-world enterprise network designed with scalability, security, and reliability in mind.
+This project simulates a **real-world Enterprise Campus Network** designed using Cisco's three-tier hierarchical architecture.
 
-The objective is to demonstrate practical networking skills by implementing enterprise-grade technologies including VLANs, OSPF, DHCP, NAT, ACLs, SSH, Port Security, EtherChannel, and Layer 2 security.
+The implementation demonstrates practical enterprise networking concepts including Layer 3 switching, VLAN segmentation, dynamic routing, centralized services, secure remote management, and Internet connectivity.
 
-This repository is being developed as part of my networking portfolio to showcase hands-on experience with Cisco networking technologies.
-
----
-
-# 🎯 Project Objectives
-
-- Design a scalable enterprise network
-- Implement secure network segmentation using VLANs
-- Configure dynamic routing with OSPF
-- Deploy DHCP and NAT services
-- Secure the infrastructure using ACLs and Port Security
-- Enable secure remote management with SSH
-- Document the complete network architecture
+The goal of this project is to replicate how medium-sized organizations design and manage scalable, secure, and maintainable campus networks.
 
 ---
 
-# 🏢 Network Architecture
+# 🖼 Enterprise Topology
+
+<p align="center">
+
+<img src="diagrams/enterprise-topology.png" width="95%">
+
+</p>
+
+---
+
+# 🏗 Enterprise Architecture
 
 ```
-                     Internet
-                         │
+                    Internet
+                        │
+                 Internet Router
+                        │
                     ISP Router
-                         │
-                    Edge Router
-                         │
-                    Core L3 Switch
-                  ┌─────────────┐
-                  │             │
-          Distribution      Distribution
-             Switch             Switch
-            │      │          │      │
-        Access   Access    Access   Access
+                        │
+                   Edge Router
+                        │
+               Layer-3 Core Switch
+                /               \
+       Distribution         Distribution
+          Switch               Switch
+         /      \             /      \
+    Access    Access     Access    Access
+
+             Enterprise Departments
 ```
 
 ---
 
-# 🏢 Departments
+# ✨ Key Features
 
-- 👨‍💼 Management
-- 💰 Finance
-- 👥 Human Resources
-- 💻 IT Department
-- 📈 Sales
-- 🖥️ Server Room
+## 🌐 Network Infrastructure
+
+- Cisco Three-Tier Architecture
+- Layer 3 Core Switching
+- Distribution Layer
+- Access Layer
+- Enterprise Server Farm
+- Public Internet Simulation
 
 ---
 
-# ⚙️ Technologies Used
+## 🖥 Enterprise Services
 
-- Cisco Packet Tracer
-- Cisco IOS
-- VLAN
-- Inter-VLAN Routing
-- OSPF
+- Internal DNS Server
+- Public DNS Server
 - DHCP
-- NAT
-- ACL
-- SSH
-- Port Security
-- EtherChannel
-- STP
+- HTTP
+- FTP
+- Mail Server
+- File Server
+- Syslog
+- NTP
+- Backup Server
 
 ---
 
-# 🔐 Security Features
+## 🔐 Security Features
 
-- Access Control Lists (ACL)
-- Port Security
 - SSH Remote Management
+- Port Security
+- PortFast
+- BPDU Guard
+- ACL
+- NAT/PAT
+- Disabled Unused Ports
 - VLAN Segmentation
-- DHCP Security
-- Secure Device Access
 
 ---
 
-# 📁 Repository Structure
+## 📡 Routing & Switching
+
+- OSPF Dynamic Routing
+- Inter-VLAN Routing
+- Layer 2 Switching
+- Layer 3 Switching
+- Trunk Links
+- Static Default Route
+- DHCP Relay (if applicable)
+
+---
+
+# 🏢 VLAN Design
+
+| VLAN | Department | Network |
+|------|------------|----------------|
+|10|Management|192.168.10.0/24|
+|20|Human Resources|192.168.20.0/24|
+|30|Finance|192.168.30.0/24|
+|40|IT Department|192.168.40.0/24|
+|50|Sales|192.168.50.0/24|
+|99|Server Farm|192.168.99.0/24|
+
+---
+
+# 🌍 WAN Addressing
+
+| Link | Network |
+|-----------------|----------------|
+|Internet ↔ ISP|198.51.100.0/30|
+|ISP ↔ Edge|203.0.113.0/30|
+|Edge ↔ Core|10.255.255.0/30|
+
+---
+
+# 🖥 Enterprise Server Farm
+
+| Server | Services |
+|---------|---------------------------|
+|Server-01|DNS, NTP, Syslog|
+|Server-02|Web, FTP, File|
+|Server-03|Mail, Backup|
+
+---
+
+# 🌎 Public Internet Services
+
+| Service | IP Address |
+|----------|----------------|
+|DNS|198.51.101.10|
+|Web|198.51.101.20|
+|FTP|198.51.101.30|
+
+---
+
+# 🧪 Validation & Testing
+
+✔ End-to-End Connectivity
+
+✔ OSPF Neighbor Formation
+
+✔ VLAN Isolation
+
+✔ Inter-VLAN Routing
+
+✔ DHCP Lease Assignment
+
+✔ Internal DNS Resolution
+
+✔ Public DNS Resolution
+
+✔ HTTP Access
+
+✔ FTP Connectivity
+
+✔ NAT/PAT Translation
+
+✔ SSH Login
+
+✔ Port Security
+
+✔ BPDU Guard
+
+---
+
+# 🛠 Technologies Used
+
+| Category | Technologies |
+|------------|----------------------------|
+|Routing|OSPF|
+|Switching|VLAN, Trunking, STP|
+|Services|DHCP, DNS, HTTP, FTP, Mail|
+|Security|ACL, SSH, NAT/PAT, Port Security|
+|Management|Syslog, NTP|
+|Platform|Cisco Packet Tracer|
+
+---
+
+# 📂 Repository Structure
 
 ```
-enterprise-network-lab
-│
+enterprise-network-lab/
+
 ├── assets/
 ├── configs/
 ├── diagrams/
 ├── docs/
 ├── packet-tracer/
 ├── screenshots/
-├── README.md
 ├── LICENSE
-└── CHANGELOG.md
+└── README.md
 ```
 
 ---
 
-# 📂 Configuration Files
+# 📸 Screenshots
 
-Configuration files will include:
-
-- Router Configurations
-- Switch Configurations
-- OSPF Configuration
-- VLAN Configuration
-- ACL Configuration
-- DHCP Configuration
-- NAT Configuration
-
----
-
-# 🖼️ Network Diagrams
-
-The repository will contain:
-
-- Logical Topology
-- Physical Topology
-- VLAN Design
-- IP Addressing Plan
-
----
-
-# 🧪 Testing
-
-The following tests will be performed.
-
-- ✅ End-to-End Connectivity
-- ✅ OSPF Neighbor Verification
-- ✅ VLAN Communication
-- ✅ DHCP Address Assignment
-- ✅ NAT Translation
-- ✅ ACL Verification
-- ✅ SSH Connectivity
-- ✅ Port Security Validation
+| Feature | Preview |
+|----------|----------|
+|Enterprise Topology|✔|
+|SSH Login|✔|
+|DHCP Test|✔|
+|DNS Resolution|✔|
+|HTTP Test|✔|
+|FTP Test|✔|
+|OSPF Neighbor|✔|
+|NAT Translation|✔|
 
 ---
 
@@ -151,30 +241,13 @@ The following tests will be performed.
 
 - IPv6 Deployment
 - HSRP
-- BGP
-- Wireless LAN
-- Syslog Server
-- NTP Server
+- EtherChannel
+- Wireless Infrastructure
 - SNMP Monitoring
-- Network Automation with Python
-
----
-
-# 📸 Screenshots
-
-Screenshots will be added after implementation.
-
----
-
-# 📚 Documentation
-
-Detailed documentation will be available inside the **docs/** directory.
-
-- Installation Guide
-- Network Architecture
-- Configuration Guide
-- Testing Guide
-- Troubleshooting Guide
+- Network Automation (Python)
+- Cisco ISE
+- VPN Connectivity
+- Firewall Integration
 
 ---
 
@@ -182,14 +255,19 @@ Detailed documentation will be available inside the **docs/** directory.
 
 **Fahad Al Sadat**
 
-Network Engineer | Linux | Python | Network Automation
+M.Sc. in Computer Science & Engineering  
+Jahangirnagar University
 
-GitHub: https://github.com/Fahad-al-sadat
+🌐 GitHub  
+https://github.com/Fahad-al-sadat
 
-LinkedIn: https://linkedin.com/in/fahad-al-sadat
+💼 LinkedIn  
+https://linkedin.com/in/fahad-al-sadat
 
 ---
 
-## ⭐ Support
+<div align="center">
 
-If you find this project useful, consider giving it a ⭐ to support my work.
+### ⭐ If you found this project useful, consider giving it a star!
+
+</div>
