@@ -46,9 +46,7 @@ The project was developed as part of my networking portfolio to demonstrate prac
 
 # 🏗 Network Architecture
 
-```
-                    <img src="diagrams/Network-flow.png" width="95%">
-```
+<img src="diagrams/Network-flow.png" width="95%">
 
 ---
 
