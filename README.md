@@ -47,22 +47,7 @@ The project was developed as part of my networking portfolio to demonstrate prac
 # 🏗 Network Architecture
 
 ```
-                    Internet
-                        │
-                Internet Router
-                        │
-                   ISP Router
-                        │
-                   Edge Router
-                        │
-               Layer 3 Core Switch
-                 /               \
-       Distribution         Distribution
-          Switch               Switch
-         /      \             /      \
-    Access    Access     Access    Access
-
-          Enterprise Departments
+                    <img src="diagrams/Network-flow.png" width="95%">
 ```
 
 ---
